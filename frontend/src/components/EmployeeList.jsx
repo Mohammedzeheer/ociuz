@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Axios } from '../api/axiosInstance';
 import { useNavigate } from "react-router-dom";
+import { MdDelete } from "react-icons/md";
+import { AiFillEdit } from "react-icons/ai";
+import { FaSave } from "react-icons/fa";
 
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
@@ -38,7 +41,7 @@ const EmployeeList = () => {
     console.log(`Deleting employee with id ${id}`);
     try {
       await Axios.delete(`employees/${id}`);
-      setEmployees(employees.filter(employee => employee.id !== id));
+      setEmployees(prevEmployees => prevEmployees.filter(employee => employee._id !== id));
     } catch (error) {
       console.error('Error:', error);
     }
@@ -85,6 +88,7 @@ const EmployeeList = () => {
                   employee.name
                 )}
               </td>
+
 
               <td className="py-2 px-4 border-b">
                 {editingId === employee._id ? (
@@ -142,21 +146,21 @@ const EmployeeList = () => {
                     onClick={() => saveEmployee(employee._id, employee)}
                     className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2"
                   >
-                    Save
+                    <FaSave/>
                   </button>
                 ) : (
                   <button
                     onClick={() => editEmployee(employee._id)}
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
                   >
-                    Edit
+                    <AiFillEdit/>
                   </button>
                 )}
                 <button
                   className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
                   onClick={() => deleteEmployee(employee._id)}
                 >
-                  Delete
+                 <MdDelete/>
                 </button>
               </td>
             </tr>
