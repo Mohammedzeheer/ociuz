@@ -33,10 +33,12 @@ function EmployeeRegister() {
       console.log(error);
     }
   };
-
+  
   return (
     <>
-      <div className="bodySignup">
+      <div className="body">
+    <div className="registers p-[4rem]">
+
         <div className="containerS">
           <h2>Register</h2>
           <input
@@ -48,7 +50,7 @@ function EmployeeRegister() {
               setUser({ ...user, [e.target.name]: e.target.value })
             }
             className="input"
-          />
+            />
           <input
             type="email"
             required
@@ -92,13 +94,16 @@ function EmployeeRegister() {
           <button type="submit" onClick={handleSubmit} className="button">
             Register
           </button>
+            </div>
 
-          <div>
-     <button onClick={()=>navigate(-1)} className="m-5 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"> Back</button>
-      
-     </div>
-        </div> 
         
+        </div> 
+        <div className="text-center">
+  <button onClick={() => navigate(-1)} className=" bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+    Back
+  </button>
+</div>
+
      </div>
     
      

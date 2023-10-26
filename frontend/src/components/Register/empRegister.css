@@ -7,6 +7,17 @@
     height: 100vh;
   }
   
+  .body{
+    background-color: #f1f1f1;
+    height: 100vh;
+  }
+  .registers {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
 
   .containerS {
       background-color: #fff;
@@ -39,7 +50,7 @@
       border: none;
       border-radius: 3px;
       cursor: pointer;
-      width: 94%;
+      width: 93%;
     }
     
     .button:hover {
