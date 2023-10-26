@@ -1,6 +1,5 @@
 import React from 'react';
 import EmployeeList from './components/EmployeeList';
-import EmployeeForm from './components/EmployeeForm';
 import EmployeeRegister from './components/Register/EmployeeRegister';
 import { BrowserRouter, Routes,Route} from 'react-router-dom';
 
