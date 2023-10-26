@@ -7,14 +7,7 @@ import { BrowserRouter, Routes,Route} from 'react-router-dom';
 const App = () => {
 
   return (
-    // <div>
-    //   <EmployeeRegister/>
-    //   {/* <EmployeeForm addEmployee={addEmployee} /> */}
-    //   {/* <EmployeeList employees={employees} editEmployee={editEmployee} deleteEmployee={deleteEmployee} /> */}
-    //   <EmployeeList/>
-    // </div>
-
-    
+ 
     <BrowserRouter>
       <Routes>      
         <Route path='/' element={<EmployeeList/>}> </Route>
